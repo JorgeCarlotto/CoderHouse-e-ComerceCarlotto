@@ -1,0 +1,50 @@
+.NavBar{
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 10px 10px 5px;
+  }
+
+  
+  
+  .NavBar-links .NavBar-links-categorias a{
+    display: inline-flex;
+    justify-content:space-between;
+    padding: 0px 1pc 0 1px;
+    color: aliceblue;
+    text-decoration: none;
+  }
+  
+  .NavBar-Inicio h2{
+    color:aliceblue;
+  }
+
+  .NavBar-Login a{
+    text-decoration: none;
+  }
+  
+  .NavBar-btn{
+    background-color: #ff4208;
+    border: none;
+    border-radius: 5%;
+    color: white;
+    padding: 20px 35px;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: flex;
+    
+  }
+  
+  .NavBar-Logo img{
+    width: 90px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    
+  }
+  
+  .NavBar-btn:hover {opacity: 1};
+  
