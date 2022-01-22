@@ -1,5 +1,5 @@
 .NavBar{
-    background-color: rgb(34, 33, 33);
+    background-color: #2B2D42;
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -12,12 +12,12 @@
     display: inline-flex;
     justify-content:space-between;
     padding: 0px 1pc 0 1px;
-    color: aliceblue;
+    color:#EDF2F4;
     text-decoration: none;
   }
   
   .NavBar-Inicio h2{
-    color:aliceblue;
+    color:#EDF2F4;
   }
 
   .NavBar-Login a{
@@ -25,10 +25,10 @@
   }
   
   .NavBar-btn{
-    background-color: #ff4208;
+    background-color: #EF233C;
     border: none;
     border-radius: 5%;
-    color: white;
+    color:#EDF2F4;
     padding: 20px 35px;
     font-size: 16px;
     margin: 4px 2px;
@@ -39,8 +39,8 @@
   }
   
   .NavBar-Logo img{
-    width: 90px;
-    height: 80px;
+    width: 100px;
+    height: 90px;
     border: none;
     border-radius: 50%;
     

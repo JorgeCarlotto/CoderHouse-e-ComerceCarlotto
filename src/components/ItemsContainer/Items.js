@@ -1,11 +1,13 @@
 import React from "react";
+import './items.css'
 
 
-export const Items = ({productos}) => {
-  return <div>
-      <h2>Nombre producto: {productos.name}</h2>
-      <h2>Precio del producto: {productos.price}</h2>
-      <hr/>
+export const Items = ( {name, price} ) => {
+  return <div className="ItemBox">
+      <div>
+      <h2>Nombre producto: {name}</h2>
+      <h3>Precio del producto: {price}</h3>
+      </div>
   </div>;
 };
 
