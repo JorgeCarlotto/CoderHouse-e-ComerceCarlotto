@@ -1,0 +1,28 @@
+.ItemCount{
+    
+    background-color: #EDF2F4;
+    border:none; 
+    width: 60%;
+    margin: 0 0 5px 10px;
+    border-radius: 3px
+}
+
+.ItemCount h4{
+    text-align: center
+}
+
+.itemCountBottons{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.itemCountBottons span{
+    font-weight: bold;
+}
+
+ .AddProduct{
+    display:block;
+    margin: 5px auto 3px auto; 
+    color: #2B2D42;
+} 
+
