@@ -4,11 +4,11 @@ import ItemCount from "../ItemCount/ItemCount";
 
 
 const Item = ({ prod }) => {
-  const { name, price, description, category, stock } = prod;
+  const { name, price, description, category, stock ,img } = prod;
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="https://res.cloudinary.com/ddi161cze/image/upload/v1643503375/logo_pez_mlls2q.jpg" />
+      <Card.Img variant="top" src={img} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
