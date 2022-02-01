@@ -23,7 +23,6 @@ const Item = ({ prod }) => {
             ${price}
         </Card.Text>
 
-
         <Button variant="primary">Detalle del Producto</Button>
       </Card.Body>
       <ItemCount stock={stock} initial={1}/>
