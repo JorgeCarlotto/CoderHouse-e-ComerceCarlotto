@@ -3,12 +3,17 @@ import{ useState } from 'react';
 import { useEffect } from 'react';
 import {getMock} from '../helpers/mock'
 import ItemDetail from '../Item/ItemDetail';
+import {useParams} from "react-router-dom"
 
 
 
 
 
 const ItemDetailContainer = () => {
+
+  const {id} = useParams();
+
+  const [selectedItem,setSelectedItem] = useState(null);
 
   const [data,setData] = useState([])
   const [loading,setLoading] = useState(true)
@@ -31,12 +36,8 @@ if(loading) {
   return <div class="container pb-4 ">
 
     <h1 class="container">Detalle del producto : </h1>
-
-  
-    
     
     <ItemDetail prod = {data[0]}/>
-   
 
   </div>;
 };

@@ -7,7 +7,7 @@ const Item = ({ prod }) => {
   const { name, price, description, category, stock ,img } = prod;
 
   return (
-    <Card style={{ width: '30rem' }}>
+    <Card  className="card shadow mb-4" style={{ width: '30rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
     <Card.Title><h2>{name}</h2></Card.Title>
