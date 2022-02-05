@@ -36,7 +36,7 @@ function NavBar() {
             <NavDropdown title="Categorias" id="collasible-nav-dropdown">
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/cañas"> Cañas</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/reeles"> Reeles</NavLink></Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/Indumentaria"> Indumentaria</NavLink></Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/indumentaria"> Indumentaria</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/varios"> Articulos varios</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Divider />
             <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="/">Todos nuestros productos</NavLink></Nav.Link></NavDropdown.Item>

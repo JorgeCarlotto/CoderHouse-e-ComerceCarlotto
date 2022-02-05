@@ -2,9 +2,6 @@ import React from "react";
 import { Card, Button,ListGroup,ListGroupItem} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 
-
-
-
 const Item = ({ prod }) => {
   const { name, price, description, category, stock ,img } = prod;
 
