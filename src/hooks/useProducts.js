@@ -5,8 +5,11 @@ import {productsDb} from "../components/helpers/promises"
 const useProducts = () => {
   const [products, setProducts] = useState([]); 
 
+  const [loading,setLoading] = useState(true)
+
   useEffect(() => {
-    getProducts();
+    getProducts()
+    .finally (()=> setLoading(false))
   }, []);
 
   const getProducts = async () => {
@@ -22,6 +25,7 @@ const useProducts = () => {
 
   return {
     products,
+    loading
   };
 };
 
