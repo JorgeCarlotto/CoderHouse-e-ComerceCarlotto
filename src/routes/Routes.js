@@ -19,7 +19,7 @@ const Rout = ()=>{
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
         </BrowserRouter>   
     )
 } 

@@ -6,9 +6,6 @@ import './NavBar.css'
 
 function NavBar() {
 
-  const activeStyle = {
-    color : "red"
-  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -30,10 +27,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link>
-              <NavLink to="/item" style={({isActive}) =>(isActive ? activeStyle : undefined) }>Item</NavLink>
-              </Nav.Link> */}
-            <NavDropdown title="Categorias" id="collasible-nav-dropdown">
+            <NavDropdown title="Categorias de Productos" id="collasible-nav-dropdown">
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/cañas"> Cañas</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/reeles"> Reeles</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/indumentaria"> Indumentaria</NavLink></Nav.Link></NavDropdown.Item>
@@ -41,14 +35,17 @@ function NavBar() {
               <NavDropdown.Divider />
             <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="/">Todos nuestros productos</NavLink></Nav.Link></NavDropdown.Item>
             </NavDropdown>
+            {/* componentes a implementar */}
+            <Nav.Link>Sobre Nosotros</Nav.Link> 
+            <Nav.Link>Contacto</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/">
+            <Nav.Link>
               <CarWidget />
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/">
+            <Nav.Link>
               {" "}
               <Button variant="danger" size="lg">
                 Login
