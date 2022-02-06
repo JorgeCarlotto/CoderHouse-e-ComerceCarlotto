@@ -5,7 +5,7 @@ import ItemDetail from "../Item/ItemDetail"
 
 const ItemDetailContainer = () => {
 
-  const { products } = useProducts();
+  const { products , loading} = useProducts();
 
   const { id } = useParams();
  
@@ -18,21 +18,22 @@ useEffect(()=>{
   }
 },[products]);
 
-console.log(selectedItem)
+
   
 
   return <div>
 
-   {/* <ItemDetail prod = {selectedItem}/>  */}
+<div className="title text-center py-10 mt-0"> <h1>Detalle del Producto:</h1>  </div>
+  <div className=" mt-0 vh-100 row justify-content-center align-items-center">
 
-  <h3>Producto seleccionado</h3>
-      {selectedItem && selectedItem.img && (
-        <img src={selectedItem.img} alt="selectedItemImage" />
-      )}
-      <p>{selectedItem && selectedItem.name}</p>
-      <p>{selectedItem && selectedItem.description}</p>
-      <p>ID: {selectedItem && selectedItem.id}</p>
-      <p>STOCK seleccionado: {selectedItem && selectedItem.stock}</p>
+  { loading ? <h1 className="mt-0 vh-50 row justify-content-center align-items-center">Cargando Producto...🐠🐟🐡</h1>    
+    : <ItemDetail prod = {selectedItem}/>}
+
+
+  
+  </div>
+
+      
     </div>
 
 

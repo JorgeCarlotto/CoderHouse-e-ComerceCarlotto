@@ -1,31 +1,31 @@
 import React from "react";
 import { Card, Button,ListGroup,ListGroupItem } from "react-bootstrap";
-
+import ItemCount from "../ItemCount/ItemCount";
 
 
 const Item = ({ prod }) => {
-  const { name, price, description, category, stock ,img } = prod;
-
+  
   return (
-    <Card  className="card shadow mb-4" style={{ width: '30rem' }}>
-  <Card.Img variant="top" src={img} />
+    <Card  className="card shadow mb-4 mt-0" style={{ width: '20rem'}}>
+  <Card.Img variant="top" src={prod && prod.img} />
   <Card.Body>
-    <Card.Title><h2>{name}</h2></Card.Title>
+    <Card.Title><h2>{prod && prod.name}</h2></Card.Title>
     <Card.Text>
       <h4>Descripción:</h4>
-    {description}
+      {prod && prod.description}
     </Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
-    <ListGroupItem>Categoria: {category}</ListGroupItem>
-    <ListGroupItem>Stock Disponible: {stock}</ListGroupItem>
-    <ListGroupItem>Precio : $ {price}</ListGroupItem>
-    
+    <ListGroupItem>Categoria: {prod && prod.category}</ListGroupItem>
+    <ListGroupItem>Stock Disponible: {prod && prod.stock}</ListGroupItem>
+    <ListGroupItem>Precio : $ {prod && prod.price}</ListGroupItem>
+    <ListGroupItem><ItemCount stock={prod && prod.stock} initial={1}/></ListGroupItem>
+    <Button variant="primary">Agregar al Carrito</Button>
   </ListGroup>
   
-  <Button variant="primary">Agregar al Carrito</Button>
 </Card>
   );
 };
 
 export default Item;
+

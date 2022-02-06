@@ -1,4 +1,4 @@
-
+import React from 'react';
 import ItemList from '../ItemList/ItemList'
  import {useParams} from "react-router-dom"
  import useProducts from "../../hooks/useProducts";
@@ -8,9 +8,7 @@ const ItemListContainer = () => {
 
    const {id} = useParams();
 
-   const { products , loading } = useProducts();
-
-
+   const { products, loading } = useProducts();
 
   return <div>
 
@@ -19,8 +17,7 @@ const ItemListContainer = () => {
     </div>
     
     <div>
-    { loading ? <h1 class="position-absolute top-50 start-50 translate-middle">Cargando...🐠🐟🐡</h1> 
-    
+    { loading ? <h1 class="mt-0 vh-50 row justify-content-center align-items-center">Cargando...🐠🐟🐡</h1>    
     : <ItemList products ={products} id={id}/>}
     
     </div>

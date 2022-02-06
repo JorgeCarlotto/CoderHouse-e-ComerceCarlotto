@@ -1,31 +1,33 @@
 import React, { useState } from "react";
- 
+import { Button, ButtonGroup } from "react-bootstrap";
 
-const ItemCount = ({stock , initial}) => {
+const ItemCount = ({ stock, initial }) => {
   const [counter, setCounter] = useState(initial);
 
   const minusCounter = () => {
-    if (counter <= 0 ) return;
+    if (counter <= 0) return;
     setCounter(counter - 1);
   };
 
   const plusCounter = () => {
     if (counter >= stock || stock === 0) return;
     setCounter(counter + 1);
-
   };
 
   return (
-      <>
-    <div className="ItemCount">
-      <h4>Cantidad de Productos</h4>
-      <div className="itemCountBottons">
-      <button onClick={minusCounter}>➖</button>
-      <span>{counter}</span>
-      <button onClick={plusCounter}>➕</button>
-    </div>
-    <button className="AddProduct"> Agregar al Carrito </button>
-    </div>
+    <>
+      <div>
+        
+        <ButtonGroup aria-label="Basic example">
+          <Button variant="secondary" onClick={minusCounter}>
+            -
+          </Button>
+          <Button variant="secondary">{counter}</Button>
+          <Button variant="secondary" onClick={plusCounter}>
+            +
+          </Button>
+        </ButtonGroup>
+      </div>
     </>
   );
 };
