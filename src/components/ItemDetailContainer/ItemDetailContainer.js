@@ -18,52 +18,26 @@ useEffect(()=>{
   }
 },[products]);
 
-
+console.log(selectedItem)
   
 
   return <div>
 
-  <ItemDetail prod = {selectedItem}/>
+   {/* <ItemDetail prod = {selectedItem}/>  */}
 
-  </div>
+  <h3>Producto seleccionado</h3>
+      {selectedItem && selectedItem.img && (
+        <img src={selectedItem.img} alt="selectedItemImage" />
+      )}
+      <p>{selectedItem && selectedItem.name}</p>
+      <p>{selectedItem && selectedItem.description}</p>
+      <p>ID: {selectedItem && selectedItem.id}</p>
+      <p>STOCK seleccionado: {selectedItem && selectedItem.stock}</p>
+    </div>
+
 
 
 };
 
-
-
-
 export default ItemDetailContainer;
 
-
-// const ItemDetailContainer = () => {
-
-//   const {id} = useParams();
- 
-//   // const [selectedItem,setSelectedItem] = useState(null);
-
-//   const [data,setData] = useState([])
-//   const [loading,setLoading] = useState(true)
-
-//  useEffect(()=>{
-//   getMock
-//   .then (res =>setData(res))
-//   .catch (err => console.log(err))
-//   .finally (()=> setLoading(false)) 
-  
-//  },[])
-
-// if(loading) {
-//   return <h1 className="position-absolute top-50 start-50 translate-middle">Cargando...🐠🐟🐡</h1>
-// }
-
-//   return <div class="container pb-4 ">
-
-//     <h1 class="container">Detalle del producto : </h1>
-    
-//     <ItemDetail prod = {data[4]}/>
-
-//   </div>;
-// };
-
-// export default ItemDetailContainer;
