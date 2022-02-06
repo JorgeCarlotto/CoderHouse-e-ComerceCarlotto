@@ -30,9 +30,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>
+            {/* <Nav.Link>
               <NavLink to="/item" style={({isActive}) =>(isActive ? activeStyle : undefined) }>Item</NavLink>
-              </Nav.Link>
+              </Nav.Link> */}
             <NavDropdown title="Categorias" id="collasible-nav-dropdown">
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/cañas"> Cañas</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/reeles"> Reeles</NavLink></Nav.Link></NavDropdown.Item>

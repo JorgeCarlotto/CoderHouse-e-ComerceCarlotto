@@ -1,9 +1,12 @@
 import React from "react";
 import { Card, Button,ListGroup,ListGroupItem} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({ prod }) => {
-  const { name, price, description, category, stock ,img } = prod;
+const Item = ({prod}) => {
+
+  
+  const { id,name, price, description, category, stock ,img } = prod;
 
   return (
    
@@ -17,7 +20,7 @@ const Item = ({ prod }) => {
     <ListGroupItem>Precio: ${price}</ListGroupItem>
   </ListGroup>
     <Card.Footer>
-    <Button variant="primary">Detalle del Producto</Button>
+    <Link to={`/item/${id}`}>Seleccionar producto</Link>
     </Card.Footer>
   </Card>
 
