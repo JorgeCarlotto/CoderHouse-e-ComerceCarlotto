@@ -1,5 +1,5 @@
 import React from "react";
-import { Card,ListGroup,ListGroupItem} from "react-bootstrap";
+import { Card,ListGroup,ListGroupItem,Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ const Item = ({prod}) => {
   </ListGroup>
     <Card.Footer>
       
-    <Link to={`/item/${id}`}>Seleccionar producto</Link>
+    <Button variant="secondary"><Link style={{ color: "white", textDecoration: "none"}} to={`/item/${id}`}>Detalle del Producto</Link></Button>
     </Card.Footer>
   </Card>
 

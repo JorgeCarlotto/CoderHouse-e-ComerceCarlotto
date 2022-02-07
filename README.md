@@ -13,7 +13,7 @@ Se espera que con esta nueva alternativa la tienda pueda llegar a miles de perso
 <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
 <a href="https://react-bootstrap.github.io/" target="_blank"> <img src="https://bitsrc.imgix.net/3fb49197a90923920dcee2f4f5c36cea2c2a1f73.png" alt="git" width="40" height="40"/> </a>
 </p>
-
+<p>Como NPM externo use React-Bootstrap para el armado de las tarjetas de una forma dinámica. </p>
 
 ### PRINCIPALES FUNCIONALIDADES
 

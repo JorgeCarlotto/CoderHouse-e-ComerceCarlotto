@@ -28,12 +28,12 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Categorias de Productos" id="collasible-nav-dropdown">
-              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/cañas"> Cañas</NavLink></Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/reeles"> Reeles</NavLink></Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/indumentaria"> Indumentaria</NavLink></Nav.Link></NavDropdown.Item>
-              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="category/varios"> Articulos varios</NavLink></Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} style={{textDecoration: "none"}} to="category/cañas"> Cañas</NavLink></Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} style={{textDecoration: "none"}}to="category/reeles"> Reeles</NavLink></Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} style={{textDecoration: "none"}}to="category/indumentaria"> Indumentaria</NavLink></Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} style={{textDecoration: "none"}}to="category/varios"> Articulos varios</NavLink></Nav.Link></NavDropdown.Item>
               <NavDropdown.Divider />
-            <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} to="/">Todos nuestros productos</NavLink></Nav.Link></NavDropdown.Item>
+            <NavDropdown.Item><Nav.Link><NavLink className={({isActive})=>(isActive ? 'activeClass' : "")} style={{textDecoration: "none"}} to="/">Todos nuestros productos</NavLink></Nav.Link></NavDropdown.Item>
             </NavDropdown>
             {/* componentes a implementar */}
             <Nav.Link>Sobre Nosotros</Nav.Link> 
@@ -59,3 +59,4 @@ function NavBar() {
 }
 
 export default NavBar;
+
