@@ -17,7 +17,6 @@ const ItemCount = ({ stock, initial }) => {
   return (
     <>
       <div>
-        
         <ButtonGroup aria-label="Basic example">
           <Button variant="secondary" onClick={minusCounter}>
             -
