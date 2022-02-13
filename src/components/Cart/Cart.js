@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../context/CartContex';
 
-function cart() {
-  return <div>
-      <h1>Pagina en construccíon disculpe las molestias !!! </h1>
-  </div>;
-}
+function Cart() {
 
-export default cart;
+  const { items } = useContext(CartContext);
+
+
+  return (
+    <div>
+      <ul>
+        {items.map(({ item }) => (
+          <li>
+            {item.name} - {item.category}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Cart;
