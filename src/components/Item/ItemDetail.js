@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContex";
 import ItemCount from "../ItemCount/ItemCount";
 
 const Item = ({ prod }) => {
   const [showBottom, setShowBottom] = useState(true);
 
-  const onAdd = () => {
+  const [quantity, setQuantity] = useState(0);
+
+  const { addItem } = useContext(CartContext)
+
+  const handleAddToCart = () => {
+    addItem({
+      item: prod,
+      quantity,
+    });
     setShowBottom(false);
   };
+ 
 
   return (
     <Card className="card shadow mb-4 mt-0" style={{ width: "20rem" }}>
@@ -30,9 +40,9 @@ const Item = ({ prod }) => {
         {showBottom ? (
           <div>
             <ListGroupItem>
-              <ItemCount stock={prod && prod.stock} initial={1} />{" "}
-              <Button variant="primary" onClick={onAdd}>
-                Add
+              <ItemCount stock={prod && prod.stock} initial={1} setSotckSelected={setQuantity} />{" "}
+              <Button variant="primary" onClick={handleAddToCart}>
+                Agregar Cantidad
               </Button>
             </ListGroupItem>
           </div>
@@ -41,8 +51,7 @@ const Item = ({ prod }) => {
             <Button className="mb-1 mt-1 " variant="primary">
               <Link
                 style={{ color: "white", textDecoration: "none" }}
-                to={`/cart`}
-              >
+                to={`/cart`}>
                 Ir al carrito
               </Link>
             </Button>

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, setSotckSelected }) => {
   const [counter, setCounter] = useState(initial);
+
+  useEffect(() => {
+    setSotckSelected(counter);
+  }, [counter]);
 
   const minusCounter = () => {
     if (counter <= 0) return;
