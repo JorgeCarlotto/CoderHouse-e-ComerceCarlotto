@@ -1,10 +1,28 @@
 import React, { useContext } from 'react';
+
+import { NavLink } from "react-router-dom";
 import { CartContext } from '../../context/CartContex';
 
 function Cart() {
 
-  const { items } = useContext(CartContext);
+  const { items, clearCart } = useContext(CartContext);
 
+
+//   const ClickRemove = (productId) =>{
+//     removeCartItem(productId);
+// }
+
+
+  const ClickClear = () => {
+    clearCart()
+}
+
+  if(items.length === 0){
+    return (<div>
+        <p >Tu carrito se encuentra vacio en este momento </p>
+        <NavLink to="/"> Volvemos a la Tienda?</NavLink>
+    </div>)
+}
 
 
   return (
@@ -15,11 +33,17 @@ function Cart() {
       <ul>
         {items.map(({ item, quantity }) => (
           <li>
-            Nombre producto : {item.name} // Categoria: {item.category} // Cantidad:{quantity} 
+            Nombre producto : {item.name} -- Categoria: {item.category} -- Cantidad a comprar:{quantity} -- 
+             {/* <button onClick={() => ClickRemove(items.id)} >Eliminar Producto del carrito</button> */}
           </li>
         ))}
       </ul>
     
+      <div>
+            <button onClick={() => ClickClear()}> Borrar todos los productos </button>
+        </div>
+
+
     </div>
   );
 };

@@ -100,8 +100,10 @@ function NavBar() {
             <Nav.Link>Contacto</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link>
+            <Nav.Link >
+              <NavLink to="cart">
               <CarWidget />
+              </NavLink>
             </Nav.Link>
           </Nav>
           <Nav>
