@@ -6,15 +6,20 @@ function Cart() {
   const { items } = useContext(CartContext);
 
 
+
   return (
     <div>
+      <div className="title text-center py-1">
+        <h1>Bienvenid@ a tu carrito:</h1>
+      </div>
       <ul>
-        {items.map(({ item }) => (
+        {items.map(({ item, quantity }) => (
           <li>
-            {item.name} - {item.category}
+            Nombre producto : {item.name} // Categoria: {item.category} // Cantidad:{quantity} 
           </li>
         ))}
       </ul>
+    
     </div>
   );
 };
