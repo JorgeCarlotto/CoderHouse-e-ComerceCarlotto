@@ -5,12 +5,12 @@ import { CartContext } from '../../context/CartContex';
 
 function Cart() {
 
-  const { items, clearCart } = useContext(CartContext);
+  const { items, clearCart,removeCartItem } = useContext(CartContext);
 
 
-//   const ClickRemove = (productId) =>{
-//     removeCartItem(productId);
-// }
+  const ClickRemove = (item) =>{
+    removeCartItem(item);
+}
 
 
   const ClickClear = () => {
@@ -34,7 +34,7 @@ function Cart() {
         {items.map(({ item, quantity }) => (
           <li>
             Nombre producto : {item.name} -- Categoria: {item.category} -- Cantidad a comprar:{quantity} -- 
-             {/* <button onClick={() => ClickRemove(items.id)} >Eliminar Producto del carrito</button> */}
+             <button onClick={() => ClickRemove(item.id)} >Eliminar Producto del carrito</button>
           </li>
         ))}
       </ul>
@@ -42,8 +42,10 @@ function Cart() {
       <div>
             <button onClick={() => ClickClear()}> Borrar todos los productos </button>
         </div>
-
-
+          
+      <div>
+      <NavLink to="/"> <h2>Seguimos comprando?</h2></NavLink>
+      </div>
     </div>
   );
 };
