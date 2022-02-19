@@ -10,8 +10,6 @@ export const CartProvider = ({ children }) => {
     setItems([...items, currentItem]);
   };
 
- 
-
   const removeCartItem = (ItemId) => {
     setItems(items.filter((item) => item.item.id != ItemId))
 };
@@ -21,9 +19,18 @@ export const CartProvider = ({ children }) => {
 };
 
 
+const SubTotalPrice = (price, quantity) => {
+  return Number((price * quantity).toFixed(2))
+}
+
+const TotalItem = () => {
+  return Number(items.reduce((acc, item) => acc + item.quantity, 0))
+}
+
+
 
   return (
-    <CartContext.Provider value={{ items, addItem, clearCart,removeCartItem}}>
+    <CartContext.Provider value={{ items, addItem, clearCart,removeCartItem,SubTotalPrice,TotalItem}}>
       {" "}
       {children}{" "}
     </CartContext.Provider>

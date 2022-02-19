@@ -20,7 +20,7 @@ function NavBar() {
           </Link>
         </Navbar.Brand>
         <Navbar.Brand>
-          <h2>Betta Fishig Store</h2>
+          <h2>Betta Fishing Store</h2>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -121,4 +121,5 @@ function NavBar() {
 }
 
 export default NavBar;
+
 
