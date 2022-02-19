@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import './CarWidget.css'
 import { FaShoppingCart } from "react-icons/fa";
 
-function CarWidget() {
 
-  // const {cartItems} = useContext(CartContext)
-
+function CarWidget({ counterItems }) {
   return (
     <div>
+      
       <FaShoppingCart color="white" />
+      { counterItems > 0 && <span className="counterItem">{counterItems}</span> }
+
     </div>
   );
 }

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from '../../context/CartContex';
 import { Navbar, NavDropdown, Nav, Container, Button } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import CarWidget from "../IconComponents/CarWidget";
 import "./NavBar.css";
 
 function NavBar() {
+
+  const { TotalItem } = useContext(CartContext)
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -102,7 +105,8 @@ function NavBar() {
           <Nav>
             <Nav.Link >
               <NavLink to="cart">
-              <CarWidget />
+              <CarWidget
+              counterItems={TotalItem()} />
               </NavLink>
             </Nav.Link>
           </Nav>
