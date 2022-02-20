@@ -11,26 +11,43 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeCartItem = (ItemId) => {
-    setItems(items.filter((item) => item.item.id != ItemId))
-};
+    setItems(items.filter((item) => item.item.id != ItemId));
+  };
 
   const clearCart = () => {
     setItems([]);
-};
+  };
 
+  const SubTotalPrice = (price, quantity) => {
+    return Number((price * quantity).toFixed(2));
+  };
 
-const SubTotalPrice = (price, quantity) => {
-  return Number((price * quantity).toFixed(2))
-}
+  const TotalItem = () => {
+    return Number(items.reduce((acc, item) => acc + item.quantity, 0));
+  };
 
-const TotalItem = () => {
-  return Number(items.reduce((acc, item) => acc + item.quantity, 0))
-}
-
-
+  const TotalPrice = () => {
+    return Number(
+      items.reduce(
+        (acc, itemCart) => (acc += itemCart.quantity * itemCart.item.price),
+        0
+      )
+    );
+  };
+  console.log(TotalPrice());
 
   return (
-    <CartContext.Provider value={{ items, addItem, clearCart,removeCartItem,SubTotalPrice,TotalItem}}>
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        clearCart,
+        removeCartItem,
+        SubTotalPrice,
+        TotalItem,
+        TotalPrice,
+      }}
+    >
       {" "}
       {children}{" "}
     </CartContext.Provider>
