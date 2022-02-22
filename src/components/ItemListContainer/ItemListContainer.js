@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
+// import useProducts from "../../hooks/useProducts";
+import {collection,getDocs} from 'firebase/firestore'
+
+import { db } from '../firebase/config'
+
 
 const ItemListContainer = () => {
+
+  const [loading,setLoading] = useState(true)
   const { id } = useParams();
 
-  const { products, loading } = useProducts();
+  // const { products, loading } = useProducts();
+
+  const productRef = collection(db,'items')
+  getDocs(productRef)
+  .then((prod)=>console.log(prod))
+  .finally(()=>(setLoading(false)))
 
   return (
     <div>
@@ -24,7 +35,7 @@ const ItemListContainer = () => {
             Cargando...🐠🐟🐡
           </h1>
         ) : (
-          <ItemList products={products} id={id} />
+          <ItemList products={productRef} id={id} />
         )}
       </div>
     </div>
