@@ -10,13 +10,15 @@ import { db } from '../firebase/config'
 const ItemListContainer = () => {
 
   const [loading,setLoading] = useState(true)
+  const [products,setProducts] = useState([])
   const { id } = useParams();
-
-  // const { products, loading } = useProducts();
 
   const productRef = collection(db,'items')
   getDocs(productRef)
-  .then((prod)=>console.log(prod))
+  .then((prod)=>{
+    const miProduct = (prod.docs.map((prod)=>({id:prod.id.at,...prod.data()})));
+    setProducts(miProduct)
+  })
   .finally(()=>(setLoading(false)))
 
   return (
@@ -35,7 +37,7 @@ const ItemListContainer = () => {
             Cargando...🐠🐟🐡
           </h1>
         ) : (
-          <ItemList products={productRef} id={id} />
+          <ItemList products={products} id={id} />
         )}
       </div>
     </div>
