@@ -3,12 +3,30 @@ import { useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import ItemDetail from "../Item/ItemDetail";
 
+import {collection,getDocs} from 'firebase/firestore'
+
+import { db } from '../firebase/config'
+
 const ItemDetailContainer = () => {
-  const { products, loading } = useProducts();
+
+  const [loading,setLoading] = useState(true)
+
+  const [products,setProducts] = useState([])
 
   const { id } = useParams();
 
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const productRef = collection(db,'items')
+
+  getDocs(productRef)
+  .then((prod)=>{
+    const miProduct = (prod.docs.map((prod)=>({id:prod.id,...prod.data()})));
+    setProducts(miProduct)
+  })
+  .finally(()=>(setLoading(false)))
+
+
 
   useEffect(() => {
     if (products.length > 0) {

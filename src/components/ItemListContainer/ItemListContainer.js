@@ -10,16 +10,22 @@ import { db } from '../firebase/config'
 const ItemListContainer = () => {
 
   const [loading,setLoading] = useState(true)
+  
+  
   const [products,setProducts] = useState([])
+  
+  
   const { id } = useParams();
 
   const productRef = collection(db,'items')
+
   getDocs(productRef)
   .then((prod)=>{
-    const miProduct = (prod.docs.map((prod)=>({id:prod.id.at,...prod.data()})));
+    const miProduct = (prod.docs.map((prod)=>({id:prod.id,...prod.data()})));
     setProducts(miProduct)
   })
   .finally(()=>(setLoading(false)))
+
 
   return (
     <div>
