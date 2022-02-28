@@ -34,7 +34,7 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
-  console.log(TotalPrice());
+
 
   return (
     <CartContext.Provider

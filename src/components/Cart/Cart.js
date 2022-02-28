@@ -102,7 +102,7 @@ function Cart() {
                   variant="primary"
                 >
                   <Link
-                    to={`/finalizarCompra`}
+                    to={`/checkout`}
                     style={{ color: "white", textDecoration: "none" }}
                   >
                     Finalizar Compra
