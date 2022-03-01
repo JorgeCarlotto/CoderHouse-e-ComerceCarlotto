@@ -3,6 +3,7 @@ import Item from "../Item/Item";
 import CardGroup from "react-bootstrap/CardGroup";
 
 const ItemList = ({ products, id }) => {
+ 
   const filterProducts = products.filter(({ category }) => category === id);
 
   return (

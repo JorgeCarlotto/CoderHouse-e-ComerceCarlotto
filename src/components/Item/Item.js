@@ -3,6 +3,7 @@ import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Item = ({ prod }) => {
+  
   const { id, name, price, description, img } = prod;
 
   return (
