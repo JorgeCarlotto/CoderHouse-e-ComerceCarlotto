@@ -67,7 +67,7 @@ export const Checkout = () => {
   };
 
   return (
-    <div>
+    <div >
       {loading ? (
         <h1 className="mt-0 vh-50 row justify-content-center align-items-center">
           Cargando Producto...🐠🐟🐡

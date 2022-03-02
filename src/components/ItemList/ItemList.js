@@ -1,14 +1,14 @@
 import React from "react";
 import Item from "../Item/Item";
-import CardGroup from "react-bootstrap/CardGroup";
+import { Row } from "react-bootstrap";
 
 const ItemList = ({ products, id }) => {
  
   const filterProducts = products.filter(({ category }) => category === id);
 
   return (
-    <div className="d-flex justify-content-evenly">
-      <CardGroup>
+    <div className="container">
+      <Row className="justify-content-between">
         {!id &&
           products.map((prod) => <Item key={prod.id} prod={prod} id={id} />)}
 
@@ -16,8 +16,13 @@ const ItemList = ({ products, id }) => {
           filterProducts.map((prod) => (
             <Item key={prod.id} prod={prod} id={id} />
           ))}
-      </CardGroup>
+      </Row>
     </div>
+
+            
+
+
+
   );
 };
 export default ItemList;

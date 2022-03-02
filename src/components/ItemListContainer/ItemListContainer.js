@@ -37,7 +37,7 @@ const ItemListContainer = () => {
         <h2>Nuestros Productos:</h2>
       </div>
 
-      <div>
+      <div >
         {loading ? (
           <h1 class="mt-0 vh-50 row justify-content-center align-items-center">
             Cargando...🐠🐟🐡
