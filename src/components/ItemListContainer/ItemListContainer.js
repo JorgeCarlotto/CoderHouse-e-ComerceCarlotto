@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import {collection,getDocs} from 'firebase/firestore'
 
 import { db } from '../firebase/config'
+import { MainCarousel } from "../Carousel/MainCarousel";
 
 
 const ItemListContainer = () => {
@@ -32,13 +33,16 @@ const ItemListContainer = () => {
       <div className="title text-center py-1">
         <h1>Bienvenidos a nuestra tienda:</h1>
       </div>
-
+      <div>
+        < MainCarousel />
+      </div>
       <div className="title text-center py-5">
         <h2>Nuestros Productos:</h2>
       </div>
 
       <div >
-        {loading ? (
+        {loading ?
+         (
           <h1 class="mt-0 vh-50 row justify-content-center align-items-center">
             Cargando...🐠🐟🐡
           </h1>

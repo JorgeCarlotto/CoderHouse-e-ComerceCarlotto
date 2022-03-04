@@ -9,7 +9,8 @@ function NavBar() {
 
   const { TotalItem } = useContext(CartContext)
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
       <Container>
         <Navbar.Brand>
           <Link to="/">
@@ -99,7 +100,15 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
             {/* componentes a implementar */}
-            <Nav.Link>Sobre Nosotros</Nav.Link>
+            <Nav.Link> 
+                  <NavLink style={{ textDecoration: 'none',color:'white'}}  className={({ isActive }) =>
+                      isActive ? "activeClass" : ""
+                    }
+                    to="/sobreNosotros">
+                      Sobre Nosotros
+
+                  </NavLink>
+              </Nav.Link>
             <Nav.Link>Contacto</Nav.Link>
           </Nav>
           <Nav>
